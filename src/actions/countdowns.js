@@ -1,9 +1,24 @@
-export const addCountdown = (countdown) => ({
-    type: 'ADD_COUNTDOWN',
-    countdown
-});
+import uuid from 'uuid';
 
-export const removeCountdown = ({id}) => ({
+export const addCountdown = (
+    {
+      title = '',
+      category = '',
+      releaseDate = 0,
+      description = ''
+    } = {}
+  ) => ({
+    type: 'ADD_COUNTDOWN',
+    countdown: {
+      id: uuid(),
+      title,
+      category,
+      releaseDate,
+      description
+    }
+  });
+
+export const removeCountdown = ({ id }) => ({
     type: 'REMOVE_COUNTDOWN',
     id
 });

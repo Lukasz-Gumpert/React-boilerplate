@@ -3,7 +3,10 @@ const countdownsReducerDefaultState = [];
 export default (state = countdownsReducerDefaultState, action) => {
     switch (action.type) {
         case 'ADD_COUNTDOWN':
-            return [state, action.countdown];
+            return [
+                ...state,
+                action.countdown
+            ];
         case 'EDIT_COUNTDOWN':
             return state.map((countdown) => {
                 if (countdown.id === action.id) {

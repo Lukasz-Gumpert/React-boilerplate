@@ -1,9 +1,11 @@
 import React from 'react';
+import { CountdownSummary } from './CountdownSummary';
 
-const DashboardPage = () => (
-    <div>
-   Dashboard Page
-    </div>
+
+const DashboardPage = (props) => (
+  <div>
+    <CountdownSummary />
+  </div>
 );
 
-export default DashboardPage;
+export default DashboardPage

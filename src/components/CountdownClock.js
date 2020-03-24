@@ -1,0 +1,63 @@
+import React from 'react';
+import moment from 'moment';
+
+export default class CountdownClock extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            days: undefined,
+            hours: undefined,
+            minutes: undefined,
+            seconds: undefined,
+        };
+    }
+    componentDidMount() {
+        this.interval = setInterval(() => {
+            const { timeTillDate, timeFormat } = this.props;
+            const then = moment(timeTillDate, timeFormat);
+            const now = moment();
+            const countdown = moment(then - now);
+            const days = countdown.format('D');
+            const hours = countdown.format('HH');
+            const minutes = countdown.format('mm');
+            const seconds = countdown.format('ss')
+
+            this.setState({ days, hours, minutes, seconds });
+        }, 1000);
+    }
+
+    componentWillUnmount() {
+        if (this.interval) {
+            clearInterval(this.interval);
+        }
+    }
+
+
+    render() {
+        const { days, hours, minutes, seconds } = this.state
+        return (
+            <div>
+                <h1>Countdown</h1>
+                <div>
+                    {days}
+                </div>
+                <div>
+                    {hours}
+                </div>
+                <div>
+                    {minutes}
+                </div>
+                <div>
+                    {seconds}
+                </div>
+            </div>)
+    }
+}
+
+   // const timer = setInterval(() => {
+        //     const now = moment();
+        //     const then = moment(timeTillDate, timeFormat);
+        //     const countdown = moment(then - now);
+
+        // }, 10000);
