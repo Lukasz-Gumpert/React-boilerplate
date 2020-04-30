@@ -18,6 +18,10 @@ export const addCountdown = (
     }
   });
 
+  const startAddCountdown = () => {
+
+  };
+
 export const removeCountdown = ({ id }) => ({
     type: 'REMOVE_COUNTDOWN',
     id

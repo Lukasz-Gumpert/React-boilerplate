@@ -37,27 +37,9 @@ export default class CountdownClock extends React.Component {
     render() {
         const { days, hours, minutes, seconds } = this.state
         return (
-            <div>
-                <h1>Countdown</h1>
                 <div>
-                    {days}
+                    D:{days}H:{hours}M:{minutes}S:{seconds}
                 </div>
-                <div>
-                    {hours}
-                </div>
-                <div>
-                    {minutes}
-                </div>
-                <div>
-                    {seconds}
-                </div>
-            </div>)
+        )
     }
 }
-
-   // const timer = setInterval(() => {
-        //     const now = moment();
-        //     const then = moment(timeTillDate, timeFormat);
-        //     const countdown = moment(then - now);
-
-        // }, 10000);

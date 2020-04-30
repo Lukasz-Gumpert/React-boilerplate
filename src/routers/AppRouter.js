@@ -3,7 +3,8 @@ import { Router, Route, Switch, NavLink } from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory' 
 import LoginPage from '../components/LoginPage';
 import DashboardPage from '../components/DashboardPage'
-import { AddCountdownItem } from '../components/AddCountdownItem';
+import AddCountdownItem from '../components/AddCountdownItem';
+import EditCountdownItem from '../components/EditCountdownItem';
 import NotFoundPage from '../components/NotFoundPage'
 import PrivateRoute from './PrivateRoute';
 import PublicRoute from './PublicRoute';
@@ -17,6 +18,7 @@ const AppRouter = () => (
                 <PublicRoute path="/" component={LoginPage} exact={true} />
                 <PrivateRoute path="/dashboard" component={DashboardPage} />
                 <PrivateRoute path="/create" component={AddCountdownItem} />
+                <PrivateRoute path="/edit/:id" component={EditCountdownItem} />
                 <Route component={NotFoundPage} />
             </Switch>
         </div>
