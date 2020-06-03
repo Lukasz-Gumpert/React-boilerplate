@@ -8,14 +8,14 @@ export default class CountdownClock extends React.Component {
         this.state = {
             days: undefined,
             hours: undefined,
-            minutes: undefined,
+            minutes: undefined, 
             seconds: undefined,
         };
     }
     componentDidMount() {
         this.interval = setInterval(() => {
-            const { timeTillDate, timeFormat } = this.props;
-            const then = moment(timeTillDate, timeFormat);
+            const { timeTillDate } = this.props;
+            const then = moment(timeTillDate);
             const now = moment();
             const countdown = moment(then - now);
             const days = countdown.format('D');

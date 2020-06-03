@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render CountdownFilters correctly 1`] = `
+<div>
+  <input
+    onChange={[Function]}
+    placeholder="search"
+    type="text"
+    value=""
+  />
+  <select
+    name="sortBy"
+    onChange={[Function]}
+    value="title"
+  >
+    <option
+      value="endingSoonest"
+    >
+      Ending soonest
+    </option>
+    <option
+      value="furthestAway"
+    >
+      Furthest away
+    </option>
+    <option
+      value="sortByName"
+    >
+      By name
+    </option>
+    <option
+      value="sortByType"
+    >
+      By type
+    </option>
+  </select>
+</div>
+`;

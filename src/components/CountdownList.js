@@ -6,9 +6,14 @@ import selectFilters from '../selectors/filters';
 
 export const CountdownList = (props) => (
     <div>
-        {props.countdowns.map((countdown) => {
-            return <CountdownListItem key={countdown.id} {...countdown} />
-        })
+        {
+            props.countdowns.length === 0 ? (
+                <p>No countdown data</p>
+            ) : (
+                    props.countdowns.map((countdown) => {
+                        return <CountdownListItem key={countdown.id} {...countdown} />
+                    })
+                )
         }
     </div>
 );

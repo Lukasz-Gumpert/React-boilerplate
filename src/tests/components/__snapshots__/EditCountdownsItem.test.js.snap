@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render EditCountdownItem correctly 1`] = `
+<div>
+  <p>
+    Edit
+  </p>
+  <CountdownForm
+    countdown={
+      Object {
+        "category": "music",
+        "description": "cd",
+        "id": 4,
+        "releaseDate": 1296000000,
+        "title": "Chill mix vol 2",
+      }
+    }
+    onSubmit={[Function]}
+  />
+  <div>
+    <button
+      onClick={[Function]}
+    >
+      Remove
+    </button>
+  </div>
+</div>
+`;

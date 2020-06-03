@@ -11,8 +11,7 @@ exports[`should render Header correctly 1`] = `
       className="header__content"
     >
       <Link
-        activeClassName="is-active"
-        className="header__title"
+        className="is-active"
         to="/dashboard"
       >
         <h1>

@@ -1,33 +1,6 @@
 import selectFilters from '../../selectors/filters';
 import moment from 'moment';
-
-
-const countdowns = [{
-    title: 'God of War',
-    releaseDate: moment().add(10, 'days').valueOf(),
-    description: 'prepayed',
-    category: 'games'
-}, {
-    title: 'God of War',
-    releaseDate: moment().add(15, 'days').valueOf(),
-    description: 'ps5 version',
-    category: 'games'
-}, {
-    title: 'David Bowie the ultimate best of',
-    releaseDate: moment().add(1, 'day').valueOf(),
-    description: 'prepayed',
-    category: 'music'
-}, {
-    title: 'Chill mix vol 2',
-    releaseDate: moment().add(15, 'days').valueOf(),
-    description: 'cd',
-    category: 'music'
-}, {
-    title: 'Chill mix vol 2',
-    releaseDate: moment().add(1, 'day').valueOf(),
-    description: 'digital',
-    category: 'music'
-}];
+import countdowns from '../fixtures/countdowns';
 
 test('should sort by title and date', () => {
     const filters = { sortBy: 'sortByName', text: '' }

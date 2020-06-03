@@ -32,7 +32,7 @@ export default class CountdownForm extends React.Component {
     };
 
     onDateChange = (releaseDate) => {
-        if (releaseDate) {
+    if (releaseDate > moment()) {
             this.setState(() => ({ releaseDate }));
         };
     };

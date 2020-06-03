@@ -27,7 +27,7 @@ const selectFilters = (countdowns, { sortBy, text, releaseDate }) => {
             if (a.category == b.category) {
                 return (a.releaseDate < b.releaseDate) ? -1 : (a.releaseDate < b.releaseDate) ? 1 : 0;
             } else {
-                return (a.category > b.category) ? -1 : 1;
+                return (a.category > b.category) ? 1 : -1;
             };
         };
     });
@@ -57,5 +57,37 @@ const selectFilters = (countdowns, { sortBy, text, releaseDate }) => {
 //         };
 //     });
 // };
+
+
+
+// const pipeComparators = (...fns) => (a, b) => {
+//     const compare = (a, b, f = 0) =>
+//       fns[f](a, b) ? fns[f](a, b) : fns[f](b, a) ? fns[f](b, a) : f !== fns.length - 1 ? compare(a, b, f + 1) : 0;
+//     return compare(a, b);
+//   };
+   
+//   const comparator = fn => (a, b) => (fn(a, b) ? 1 : fn(b, a) ? -1 : 0);
+   
+//   const filters = {
+//     sortByName: comparator((a, b) => (a.title > b.title ? 1 : -1)),
+//     endingSoonest: comparator((a, b) => (a.releaseDate > b.releaseDate ? 1 : -1)),
+//     furthestAway: comparator((a, b) => (a.releaseDate < b.releaseDate ? 1 : -1)),
+//     sortByType: comparator((a, b) => (a.category > b.category ? 1 : -1)),
+//   };
+   
+//   const sortByProperty = propName => comparator((a, b) => (a[propName] > b[propName] ? 1 : -1));
+   
+//   const getFilterByName = filterName => {
+//     const filter = filters[filterName];
+//     return filter || comparator(() => 0);
+//   };
+   
+//   const selectFilters = (countdowns, { sortBy, text, releaseDate }) => {
+//     return countdowns
+//       .filter(
+//         ({ title, description }) =>
+//           title.toLowerCase().includes(text.toLowerCase()) || description.toLowerCase().includes(text.toLowerCase()),
+//       )
+//       .sort(pipeComparators(sortByProperty('TU_NAZWA_WLASCIWOSCI'), getFilterByName(sortBy)));
 
 export default selectFilters;

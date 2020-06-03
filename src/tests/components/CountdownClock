@@ -1,0 +1,24 @@
+import React from 'react';
+import moment from 'moment';
+import { shallow, mount } from 'enzyme';
+import CountdownClock from '../../components/CountdownClock';
+
+
+
+test('Should render countdownClock component correctly', () => {
+    const releaseDate = moment()
+    const wrapper = shallow(<CountdownClock timeTillDate={releaseDate} />);
+    expect(wrapper).toMatchSnapshot();
+});
+
+// https://stackoverflow.com/questions/34113100/testing-react-componentwillunmount-using-jest
+
+
+test('Should render countdownClock component correctly', async () => {
+    const releaseDate = moment()
+    let wrapper = mount(
+        <CountdownClock
+            timeTillDate={releaseDate}
+        />);
+    expect(wrapper.state('days').length).not.toBe(0);
+});

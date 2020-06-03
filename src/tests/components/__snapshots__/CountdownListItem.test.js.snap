@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render countdownListItem correctly 1`] = `
+<Link
+  className="list-item"
+  to="edit/undefined"
+>
+  <p>
+     
+     
+  </p>
+  <h1 />
+   : 
+   
+  <p>
+    Time left:
+  </p>
+  <CountdownClock
+    timeTillDate={"1970-01-01T00:00:00.000Z"}
+  />
+</Link>
+`;

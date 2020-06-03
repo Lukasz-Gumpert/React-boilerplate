@@ -2,24 +2,28 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { setTextFilter, sortByName, sortByType, endingSoonest, furthestAway } from '../actions/filters';
 
-class CountdownFilters extends React.Component {
+export class CountdownFilters extends React.Component {
     constructor(props) {
         super(props);
+
+        this.onTextChange = (e) => {
+            return this.props.setTextFilter(e.target.value);
+        }
 
         this.onSortChange = (sel) => {
             const sortBy = sel.target.value;
             if (sortBy === "sortByName") {
-                return props.dispatch(sortByName());
+                return props.sortByName();
             } else if (sortBy === "sortByType") {
-                return props.dispatch(sortByType());
+                return props.sortByType();
             } else if (sortBy === "endingSoonest") {
-                return props.dispatch(endingSoonest());
+                return props.endingSoonest();
             } else if (sortBy === "furthestAway") {
-                return props.dispatch(furthestAway());
+                return props.furthestAway();
             };
         };
     };
-    
+
     render() {
         return (
             <div>
@@ -27,7 +31,7 @@ class CountdownFilters extends React.Component {
                     type="text"
                     placeholder="search"
                     value={this.props.filters.text}
-                    onChange={(e) => { this.props.dispatch(setTextFilter(e.target.value)) }}
+                    onChange={this.onTextChange}
                 />
                 <select
                     value={this.props.filters.sortBy}
@@ -50,5 +54,13 @@ const mapStateToProps = (state) => {
     };
 };
 
+const mapDispatchToProps = (dispatch) => ({
+    setTextFilter: (data) => dispatch(setTextFilter(data)),
+    sortByName: () => dispatch(sortByName()),
+    sortByType: () => dispatch(sortByType()),
+    endingSoonest: () => dispatch(endingSoonest()),
+    furthestAway: () => dispatch(furthestAway()),
+});
 
-export default connect(mapStateToProps)(CountdownFilters);
+
+export default connect(mapStateToProps, mapDispatchToProps)(CountdownFilters);

@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render CountdownList component with provided fixture data 1`] = `
+<div>
+  <CountdownListItem
+    category="games"
+    description="prepayed"
+    id={1}
+    key="1"
+    releaseDate={864000000}
+    title="God of War"
+  />
+  <CountdownListItem
+    category="games"
+    description="ps5 version"
+    id={2}
+    key="2"
+    releaseDate={1296000000}
+    title="God of War"
+  />
+  <CountdownListItem
+    category="music"
+    description="prepayed"
+    id={3}
+    key="3"
+    releaseDate={86400000}
+    title="David Bowie the ultimate best of"
+  />
+  <CountdownListItem
+    category="music"
+    description="cd"
+    id={4}
+    key="4"
+    releaseDate={1296000000}
+    title="Chill mix vol 2"
+  />
+  <CountdownListItem
+    category="music"
+    description="digital"
+    id={5}
+    key="5"
+    releaseDate={86400000}
+    title="Chill mix vol 2"
+  />
+</div>
+`;
+
+exports[`Should render error paragraph when no data is provided to CountdownList component 1`] = `
+<div>
+  <p>
+    No countdown data
+  </p>
+</div>
+`;
